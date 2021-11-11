@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { NavHashLink as Link } from "react-router-hash-link";
 
 const Header = () => {
     return (
@@ -6,13 +6,13 @@ const Header = () => {
             <h1>React Router</h1>
             <ul className="nav">
                 <li>
-                    <Link to="/">Home</Link>
+                    <Link to="/" activeClassName="activeLinkNav">Home</Link>
                 </li>
                 <li>
-                    <Link to="/about">About</Link>
+                    <Link to="/about" activeClassName="activeLinkNav">About</Link>
                 </li>
                 <li>
-                    <Link to="/profile">Profile</Link>
+                    <Link to="/profile" activeClassName="activeLinkNav">Profile</Link>
                 </li>
             </ul>
         </>

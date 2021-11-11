@@ -10,6 +10,7 @@
     display: flex;
     justify-content: space-evenly;
 }
+
 a {
     text-decoration: none;
     color: inherit;
@@ -17,4 +18,8 @@ a {
 
 li{
     list-style-type: none;
+}
+
+.activeLinkNav {
+    font-weight: bold;
 }
