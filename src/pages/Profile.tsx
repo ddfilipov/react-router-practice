@@ -1,4 +1,4 @@
-import { Link, Route, Switch, useRouteMatch } from "react-router-dom"
+import { Link, Redirect, Route, Switch, useRouteMatch } from "react-router-dom"
 import EditProfile from "./EditProfile"
 import ViewProfile from "./ViewProfile"
 
@@ -7,22 +7,25 @@ const Profile = () => {
 
     return (
         <>
-        <h1>
-            Profile Page
-        </h1>
-        <ul>
-            <li>
-                <Link to={`${url}/view-profile`}>View Profile</Link>
-            </li>
-            <li>
-                <Link to={`${url}/edit-profile`}>Edit Profile</Link>
-            </li>
-        </ul>
+            <h1>
+                Profile Page
+            </h1>
+            <ul>
+                <li>
+                    <Link to={`${url}/view-profile`}>View Profile</Link>
+                </li>
+                <li>
+                    <Link to={`${url}/edit-profile`}>Edit Profile</Link>
+                </li>
+            </ul>
 
-        <Switch>
-            <Route path={`${path}/view-profile`} component={ViewProfile}/>
-            <Route path={`${path}/edit-profile`} component={EditProfile}/>
-        </Switch>
+            <Switch>
+                <Route exact path={path}> 
+                    <Redirect to={`${path}/view-profile`}></Redirect>
+                </Route>
+                <Route path={`${path}/view-profile`} component={ViewProfile}/>
+                <Route path={`${path}/edit-profile`} component={EditProfile}/>
+            </Switch>
         </>
     )
 }
